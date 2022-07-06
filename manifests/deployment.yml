@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: moven10 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moven10
+  template:
+    metadata:
+      labels:
+        app: moven10 
+    spec:
+      containers:
+        - name: moven10 
+          image: mavencicd.azurecr.io/moven10
+          ports:
+          - containerPort: 80
