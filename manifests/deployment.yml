@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shivpawarmyonlinestore 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shivpawarmyonlinestore
+  template:
+    metadata:
+      labels:
+        app: shivpawarmyonlinestore 
+    spec:
+      containers:
+        - name: shivpawarmyonlinestore 
+          image: myonlinestore1.azurecr.io/shivpawarmyonlinestore
+          ports:
+          - containerPort: 80
