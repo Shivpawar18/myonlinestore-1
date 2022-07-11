@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myonlinestore10 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myonlinestore10
+  template:
+    metadata:
+      labels:
+        app: myonlinestore10 
+    spec:
+      containers:
+        - name: myonlinestore10 
+          image: myonlinestore1.azurecr.io/myonlinestore10
+          ports:
+          - containerPort: 80
